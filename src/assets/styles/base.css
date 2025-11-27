@@ -1,0 +1,168 @@
+/* ========================================
+   BonsAI Base Styles
+   Global styles, resets, and utilities
+   ======================================== */
+
+/* ===== CSS Reset ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--color-charcoal-ink);
+    background-color: var(--color-rice-paper);
+}
+
+/* ===== Rice Paper Background Texture ===== */
+/* Subtle noise texture using base64 encoded SVG */
+.bg-paper {
+    position: relative;
+    background-color: var(--color-rice-paper);
+}
+
+.bg-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    z-index: var(--z-base);
+}
+
+.bg-paper>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Typography ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-4);
+}
+
+h1 {
+    font-size: var(--text-6xl);
+    font-weight: var(--weight-black);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: var(--text-4xl);
+}
+
+h3 {
+    font-size: var(--text-3xl);
+}
+
+h4 {
+    font-size: var(--text-2xl);
+}
+
+h5 {
+    font-size: var(--text-xl);
+}
+
+h6 {
+    font-size: var(--text-lg);
+}
+
+p {
+    margin-bottom: var(--space-4);
+}
+
+/* Monospace for data/specs */
+.mono {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+}
+
+/* ===== Layout Utilities ===== */
+.container {
+    width: 100%;
+    max-width: var(--container-lg);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+}
+
+.section {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+}
+
+/* ===== Brutalist Border System ===== */
+.border-box {
+    border: var(--border);
+}
+
+.border-top {
+    border-top: var(--border);
+}
+
+.border-bottom {
+    border-bottom: var(--border);
+}
+
+.border-left {
+    border-left: var(--border);
+}
+
+.border-right {
+    border-right: var(--border);
+}
+
+/* ===== Hard Shadow Utilities ===== */
+.shadow-sm {
+    box-shadow: var(--shadow-sm);
+}
+
+.shadow {
+    box-shadow: var(--shadow-base);
+}
+
+.shadow-md {
+    box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===== Responsive Images ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== Selection Styling ===== */
+::selection {
+    background-color: var(--color-mustard-sun);
+    color: var(--color-charcoal-ink);
+}
