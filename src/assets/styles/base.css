@@ -15,6 +15,7 @@
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -165,4 +166,19 @@ img {
 ::selection {
     background-color: var(--color-mustard-sun);
     color: var(--color-charcoal-ink);
+}
+
+/* ===== Focus States (Accessibility) ===== */
+*:focus {
+    outline: 2px solid var(--color-olive-growth);
+    outline-offset: 3px;
+}
+
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 2px solid var(--color-olive-growth);
+    outline-offset: 3px;
 }
