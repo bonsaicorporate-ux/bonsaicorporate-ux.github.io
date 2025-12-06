@@ -1,0 +1,24 @@
+---
+interface Props {
+	href?: string;
+	variant?: "primary" | "secondary" | "outline";
+	class?: string;
+    [key: string]: any; // Allow other props like onClick, target, etc.
+}
+
+const { href, variant = "primary", class: className, ...rest } = Astro.props;
+
+const baseStyles = "inline-flex items-center justify-center px-6 py-3 border-2 border-charcoal-ink font-heading font-bold transition-all duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] text-lg cursor-pointer select-none active:translate-x-[2px] active:translate-y-[2px] active:shadow-none bg-white text-charcoal-ink";
+
+const variants = {
+	primary: "bg-mustard-sun shadow-base hover:-translate-y-1 hover:shadow-md",
+	secondary: "bg-olive-growth text-rice-paper shadow-base hover:-translate-y-1 hover:shadow-md",
+	outline: "bg-transparent shadow-base hover:-translate-y-1 hover:shadow-md hover:bg-white/50",
+};
+
+const Element = href ? "a" : "button";
+---
+
+<Element href={href} class:list={[baseStyles, variants[variant], className]} {...rest}>
+	<slot />
+</Element>
