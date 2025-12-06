@@ -27,7 +27,7 @@ export default function SearchArchitecture() {
 
             {/* Labels */}
             <div className="absolute top-4 left-4 text-xs font-bold text-charcoal-ink/50 uppercase tracking-widest">
-                Fig 3.a: Scraper Proxy Protocol
+                Fig 4: Scraper Proxy Protocol
             </div>
 
             <div className="flex w-full justify-between items-center max-w-lg relative">
