@@ -1,5 +1,6 @@
 ---
 import Placeholder from './ui/Placeholder.astro';
+import SearchArchitecture from './diagrams/SearchArchitecture';
 
 const features = [
 	{
@@ -63,11 +64,7 @@ const features = [
                     />
                 )}
                 {!feature.media && (
-                    <div class="p-8 border-2 border-charcoal-ink bg-white shadow-base">
-                        <p class="font-mono text-sm text-gray-500 text-center">
-                            [System Diagram: Search Architecture]
-                        </p>
-                    </div>
+                    <SearchArchitecture client:visible />
                 )}
             </div>
         </div>
