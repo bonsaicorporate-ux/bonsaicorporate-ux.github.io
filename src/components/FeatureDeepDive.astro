@@ -6,15 +6,15 @@ const features = [
 		id: "dual-brain",
 		title: "The Dual Brain",
 		subtitle: "Instruct vs. Thinking",
-		description: "Most AI blurts out the first thing it predicts. BonsAI gives you two modes. Toggle 'Instruct' for fast, chatty answers. Toggle 'Thinking' to engage a reasoning model that visibly pauses to verify its logic before speaking. It’s the difference between a guess and a decision.",
-		media: { type: "video", caption: "Fig 1: The Qwen Thinking Model deliberating before answering." },
+		description: "BonsAI gives you two modes. Use 'Instruct' for the standard, fast chat experience you are used to. Toggle 'Thinking' to engage a reasoning model that visibly pauses to verify its logic before speaking. It provides extra power and depth for complex problems.",
+		media: { type: "video", caption: "Fig 1: The Thinking Model deliberating before answering." },
 		align: "left"
 	},
 	{
 		id: "knowledge-grafting",
 		title: "Knowledge Grafting",
 		subtitle: "Feed the Soil",
-		description: "Drag and drop PDFs or text files directly into a conversation. Unlike cloud tools that dump your data into a black box, BonsAI grafts documents to specific chat contexts. Your sensitive financial docs or draft manuscripts never leave your SSD.",
+		description: "Drag and drop PDFs or text files directly into a conversation. BonsAI grafts documents to specific chat contexts, allowing you to query your private data securely. Your sensitive financial docs or draft manuscripts never leave your SSD.",
 		media: { type: "video", caption: "Fig 2: Local RAG. No upload bars. No cloud processing." },
 		align: "right"
 	},
@@ -22,7 +22,7 @@ const features = [
 		id: "digital-gardening",
 		title: "Digital Gardening",
 		subtitle: "Deep Roots",
-		description: "Cloud AI suffers from amnesia. BonsAI learns.<br/><br/><strong>The Bio-Card:</strong> A persistent file where you define who you are. The AI reads this before every response.<br/><strong>Clippings:</strong> Highlight any text in a chat to 'Clip' it to long-term memory.<br/><strong>Saplings:</strong> Grow distinct Personas for different tasks—a 'Junior Dev' for coding, a 'Plot Architect' for writing.",
+		description: "Cloud AI suffers from amnesia. BonsAI learns.<br/><br/><strong>The Bio-Card:</strong> A persistent file where you define who you are.<br/><strong>Clippings:</strong> Highlight any text in a chat to 'Clip' it to long-term memory.<br/><strong>Saplings:</strong> Grow distinct Personas for different tasks—a 'Junior Dev' for coding, a 'Plot Architect' for writing.",
 		media: { type: "image", caption: "Fig 3: The Bio-Card & Saplings personalization engine." },
 		align: "left"
 	},
@@ -42,9 +42,6 @@ const features = [
         <div id={feature.id} class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
             {/* Text Side */}
             <div class:list={["space-y-6", feature.align === 'right' ? 'md:order-2' : 'md:order-1']}>
-                <div class="inline-block border-b-2 border-charcoal-ink pb-1 mb-2">
-                    <span class="font-mono text-sm uppercase tracking-widest text-olive-growth font-bold">Entry 0{index + 1}</span>
-                </div>
                 
                 <h3 class="font-heading font-bold text-4xl text-charcoal-ink">
                     {feature.title}
