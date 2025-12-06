@@ -1,0 +1,31 @@
+---
+interface Props {
+	type: "video" | "image";
+	src?: string;
+	alt?: string; // For images
+    caption?: string;
+    class?: string;
+}
+
+const { type, src, alt, caption, class: className } = Astro.props;
+---
+
+<figure class:list={["flex flex-col gap-2", className]}>
+    <div class="relative border-2 border-charcoal-ink shadow-base bg-white overflow-hidden aspect-video flex items-center justify-center">
+        {src ? (
+            type === "video" ? (
+                <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                    <source src={src} type="video/mp4" />
+                </video>
+            ) : (
+                <img src={src} alt={alt || ""} class="w-full h-full object-cover" />
+            )
+        ) : (
+             <div class="flex flex-col items-center justify-center p-8 text-center bg-gray-100 w-full h-full">
+                <span class="font-mono text-sm text-gray-500 mb-2">[{type.toUpperCase()} PLACEHOLDER]</span>
+                {alt && <span class="font-mono text-xs text-gray-400 max-w-[200px]">{alt}</span>}
+            </div>
+        )}
+    </div>
+    {caption && <figcaption class="text-sm font-mono text-gray-600 text-center">{caption}</figcaption>}
+</figure>

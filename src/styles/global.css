@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+    /* Colors */
+    --color-rice-paper: #FDFBF7;
+    --color-charcoal-ink: #2D2D2D;
+    --color-olive-growth: #6B705C;
+    --color-mustard-sun: #E9C46A;
+    --color-terracotta: #CB997E;
+
+    /* Fonts */
+    --font-heading: "Merriweather", serif;
+    --font-body: "Inter", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
+    /* Spacing (Optional override if needed, but defaults are usually fine) */
+
+    /* Shadows */
+    --shadow-sm: 2px 2px 0px #2D2D2D;
+    --shadow-base: 4px 4px 0px #2D2D2D;
+    --shadow-md: 6px 6px 0px #2D2D2D;
+    --shadow-lg: 8px 8px 0px #2D2D2D;
+    --shadow-pressed: 2px 2px 0px #2D2D2D;
+}
+
+@layer utilities {
+    .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    }
+}
+
+html,
+body {
+    background-color: var(--color-rice-paper);
+    color: var(--color-charcoal-ink);
+    font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+
+code,
+pre {
+    font-family: var(--font-mono);
+}

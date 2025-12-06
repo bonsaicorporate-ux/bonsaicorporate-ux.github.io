@@ -1,0 +1,25 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-charcoal-ink text-rice-paper py-16 border-t-[1px] border-olive-growth">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+        
+        <div class="space-y-2">
+            <h3 class="font-heading font-bold text-2xl">BonsAI</h3>
+            <p class="font-mono text-xs opacity-60">Project "Almanac"</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6 md:gap-12 font-mono text-sm opacity-80">
+            <a href="#" class="hover:text-mustard-sun transition-colors">r/LocalLLaMA Thread</a>
+            <a href="#" class="hover:text-mustard-sun transition-colors">Report an Issue</a>
+            <a href="#" class="hover:text-mustard-sun transition-colors">Privacy Manifesto</a>
+        </div>
+
+        <div class="text-xs font-mono opacity-50 flex flex-col items-center md:items-end gap-1">
+            <span class="px-2 py-1 border border-rice-paper/20 rounded-full bg-rice-paper/5">Built with Rust + Tauri + React</span>
+            <span>One-time purchase / Free Alpha</span>
+            <span class="mt-2">© {year} BonsAI Workspace</span>
+        </div>
+    </div>
+</footer>
