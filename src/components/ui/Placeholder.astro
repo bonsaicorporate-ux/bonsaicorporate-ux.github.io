@@ -5,16 +5,18 @@ interface Props {
 	alt?: string; // For images
     caption?: string;
     class?: string;
+    loop?: boolean; // For videos, default true
+    objectPosition?: string; // For controlling crop position, e.g. "center top"
 }
 
-const { type, src, alt, caption, class: className } = Astro.props;
+const { type, src, alt, caption, class: className, loop = true, objectPosition = "center" } = Astro.props;
 ---
 
 <figure class:list={["flex flex-col gap-2", className]}>
     <div class="relative border-2 border-charcoal-ink shadow-base bg-white overflow-hidden aspect-video flex items-center justify-center">
         {src ? (
             type === "video" ? (
-                <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                <video class="w-full h-full object-cover" style={`object-position: ${objectPosition}`} autoplay muted playsinline loop={loop}>
                     <source src={src} type="video/mp4" />
                 </video>
             ) : (

@@ -1,52 +1,53 @@
 ---
-import Placeholder from './ui/Placeholder.astro';
-import Button from './ui/Button.astro';
+/**
+ * Trust.astro
+ * Section highlighting energy efficiency of local inference
+ */
 ---
 
 <section class="py-24 bg-rice-paper relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4">
-         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
              <!-- Content -->
              <div class="space-y-8">
                  <h2 class="font-heading font-black text-4xl md:text-5xl text-charcoal-ink">
-                     The Walled Garden<br />
-                     <span class="text-olive-growth italic font-medium">(With an Open Gate)</span>
+                     Sustainable AI<br />
+                     <span class="text-olive-growth italic font-medium">Energy That Stays Home</span>
                  </h2>
 
                  <div class="prose prose-lg text-charcoal-ink/90 font-body">
                      <p>
-                        BonsAI is a local vault. We use a standard SQLite database stored on your machine.
+                        Cloud AI isn't just a privacy problem—it's an energy problem. Every query travels through data centers burning electricity around the clock.
                      </p>
-                     <p class="font-bold text-xl mt-4 mb-2">The Harvest Protocol</p>
                      <p>
-                        We believe the best way to keep you is to let you leave. Use the 'Harvest' command to export your entire history, memory, and personas into universal Markdown and JSON files. Your data is yours, forever.
+                        Local inference on your own hardware changes the equation. No servers. No transmission overhead. Just your chip doing what it was designed to do.
                      </p>
                  </div>
 
                  <ul class="space-y-4 font-mono text-sm border-t-2 border-charcoal-ink/10 pt-8">
-                     <li class="flex items-center gap-3">
-                         <span class="w-2 h-2 bg-olive-growth rounded-full"></span>
-                         Zero Telemetry (We don't know you exist)
+                     <li class="flex items-start gap-3">
+                         <span class="w-2 h-2 bg-olive-growth rounded-full mt-2 flex-shrink-0"></span>
+                         <span>No data center overhead</span>
                      </li>
-                     <li class="flex items-center gap-3">
-                         <span class="w-2 h-2 bg-olive-growth rounded-full"></span>
-                         Firewall Friendly (Block us, we still work)
+                     <li class="flex items-start gap-3">
+                         <span class="w-2 h-2 bg-olive-growth rounded-full mt-2 flex-shrink-0"></span>
+                         <span>Zero network transmission energy</span>
                      </li>
-                     <li class="flex items-center gap-3">
-                         <span class="w-2 h-2 bg-olive-growth rounded-full"></span>
-                         Standard File Formats (Markdown/JSON)
+                     <li class="flex items-start gap-3">
+                         <span class="w-2 h-2 bg-olive-growth rounded-full mt-2 flex-shrink-0"></span>
+                         <span>Optimized for Apple Silicon efficiency</span>
                      </li>
                  </ul>
              </div>
 
-             <!-- Visual -->
+             <!-- Visual: Big percentage callout -->
              <div class="relative">
-                 <div class="absolute -top-4 -right-4 w-24 h-24 bg-terracotta/10 rounded-full blur-2xl z-0"></div>
-                 <Placeholder 
-                    type="image" 
-                    caption="Fig 4: One-click export of your entire digital brain."
-                    class="relative z-10 transition-transform duration-500"
-                 />
+                 <div class="absolute -top-4 -right-4 w-32 h-32 bg-olive-growth/10 rounded-full blur-3xl z-0"></div>
+                 <div class="relative z-10 bg-white border-2 border-charcoal-ink shadow-base p-10 text-center">
+                     <span class="font-heading font-black text-7xl md:text-8xl text-olive-growth">&gt;75%</span>
+                     <p class="font-heading text-2xl text-charcoal-ink mt-4">Less Energy</p>
+                     <p class="font-mono text-sm text-charcoal-ink/60 mt-2">per query vs. cloud inference</p>
+                 </div>
              </div>
          </div>
     </div>
