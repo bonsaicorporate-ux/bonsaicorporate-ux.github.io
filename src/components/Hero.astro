@@ -1,32 +1,54 @@
 ---
-import { Image } from 'astro:assets';
-import Button from './ui/Button.astro';
-import logoMark from '../assets/images/core/logo-mark.png';
+import { Image } from "astro:assets";
+import Button from "./ui/Button.astro";
+import logoMark from "../assets/images/core/logo-mark.png";
 ---
 
-<section class="min-h-[90vh] flex flex-col items-center justify-center py-20 px-4 text-center relative overflow-hidden">
+<section
+    class="min-h-[90vh] flex flex-col items-center justify-center py-20 px-4 text-center relative overflow-hidden"
+>
     <!-- Visual -->
-    <div class="mb-8 relative z-10 w-32 md:w-48 animate-in fade-in zoom-in duration-1000 ease-out">
-        <Image src={logoMark} alt="BonsAI Woodcut Tree Logo" class="w-full h-auto drop-shadow-md opacity-90 mix-blend-multiply" />
+    <div
+        class="mb-8 relative z-10 w-32 md:w-48 animate-in fade-in zoom-in duration-1000 ease-out"
+    >
+        <Image
+            src={logoMark}
+            alt="BonsAI Woodcut Tree Logo"
+            class="w-full h-auto drop-shadow-md opacity-90 mix-blend-multiply"
+        />
     </div>
 
     <!-- Content -->
     <div class="max-w-4xl mx-auto space-y-6 relative z-10">
-        <h1 class="font-heading font-black text-5xl md:text-7xl tracking-tight text-charcoal-ink animate-in slide-in-from-bottom-4 fade-in duration-1000 delay-150 fill-mode-backwards">
+        <h1
+            class="font-heading font-black text-5xl md:text-7xl tracking-tight text-charcoal-ink animate-in slide-in-from-bottom-4 fade-in duration-1000 delay-150 fill-mode-backwards"
+        >
             BonsAI:<br class="hidden md:block" /> Your Data. Your Desk.
         </h1>
 
-        <p class="font-body text-xl md:text-2xl text-charcoal-ink/80 max-w-2xl mx-auto leading-relaxed animate-in slide-in-from-bottom-4 fade-in duration-1000 delay-300 fill-mode-backwards">
+        <p
+            class="font-body text-xl md:text-2xl text-charcoal-ink/80 max-w-2xl mx-auto leading-relaxed animate-in slide-in-from-bottom-4 fade-in duration-1000 delay-300 fill-mode-backwards"
+        >
             The privacy-absolutist AI environment for macOS.<br />
             Runs entirely offline. No subscriptions. No data harvesting.
         </p>
 
-        <div class="pt-8 animate-in slide-in-from-bottom-4 fade-in duration-1000 delay-500 fill-mode-backwards">
-            <Button href="/BonsAI_0.2.0_aarch64.dmg" variant="primary" class="text-xl px-10 py-4">
+        <div
+            class="pt-8 animate-in slide-in-from-bottom-4 fade-in duration-1000 delay-500 fill-mode-backwards"
+        >
+            <Button
+                href="/BonsAI_0.3.0_aarch64.dmg"
+                variant="primary"
+                class="text-xl px-10 py-4"
+            >
                 Download Alpha (macOS)
             </Button>
-            <p class="mt-3 font-body text-sm text-charcoal-ink/70">Install as easily as Chrome. No coding required.</p>
-            <p class="mt-4 font-mono text-xs md:text-sm text-charcoal-ink/60 flex items-center justify-center gap-2 md:gap-4 flex-wrap">
+            <p class="mt-3 font-body text-sm text-charcoal-ink/70">
+                Install as easily as Chrome. No coding required.
+            </p>
+            <p
+                class="mt-4 font-mono text-xs md:text-sm text-charcoal-ink/60 flex items-center justify-center gap-2 md:gap-4 flex-wrap"
+            >
                 <span>macOS 26 Tahoe</span>
                 <span class="hidden md:inline">•</span>
                 <span>Apple Silicon (M-Series)</span>
@@ -37,14 +59,13 @@ import logoMark from '../assets/images/core/logo-mark.png';
     </div>
 
     <!-- Intro Video -->
-    <div class="w-full max-w-4xl mt-16 relative z-10 animate-in fade-in duration-1000 delay-700 fill-mode-backwards">
-        <div class="border-2 border-charcoal-ink shadow-base bg-white overflow-hidden">
-            <video 
-                class="w-full h-auto" 
-                autoplay 
-                muted 
-                playsinline
-            >
+    <div
+        class="w-full max-w-4xl mt-16 relative z-10 animate-in fade-in duration-1000 delay-700 fill-mode-backwards"
+    >
+        <div
+            class="border-2 border-charcoal-ink shadow-base bg-white overflow-hidden"
+        >
+            <video class="w-full h-auto" autoplay muted playsinline>
                 <source src="/Bonsai-Intro-Web.mp4" type="video/mp4" />
             </video>
         </div>
