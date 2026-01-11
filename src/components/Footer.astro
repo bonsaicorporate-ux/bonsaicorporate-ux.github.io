@@ -1,5 +1,8 @@
 ---
+import { getDmgPath } from "../utils/getDmgPath";
+
 const year = new Date().getFullYear();
+const dmgPath = getDmgPath();
 ---
 
 <footer
@@ -15,9 +18,8 @@ const year = new Date().getFullYear();
         <div
             class="flex flex-col md:flex-row gap-6 md:gap-12 font-mono text-sm opacity-80"
         >
-            <a
-                href="/BonsAI_0.3.0_aarch64.dmg"
-                class="hover:text-mustard-sun transition-colors">Download</a
+            <a href={dmgPath} class="hover:text-mustard-sun transition-colors"
+                >Download</a
             >
             <a
                 href="https://github.com/bonsaicorporate-ux/bonsai-issues/issues"
