@@ -1,0 +1,111 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="About the Developer - BonsAI">
+    <main class="bg-rice-paper min-h-screen py-20 px-4">
+        <article class="max-w-3xl mx-auto">
+            <header class="mb-12 text-center">
+                <h1
+                    class="font-heading font-black text-4xl md:text-6xl text-charcoal-ink mb-6"
+                >
+                    About the Developer
+                </h1>
+            </header>
+
+            <div
+                class="space-y-6 text-lg text-charcoal-ink/80 font-body leading-relaxed"
+            >
+                <!-- Image Section -->
+                <div class="flex justify-center mb-12">
+                    <div class="relative">
+                        <div
+                            class="absolute inset-0 bg-olive-growth translate-x-2 translate-y-2 rounded-lg"
+                        >
+                        </div>
+                        <img
+                            src="/forsythe.png"
+                            alt="Connor Forsythe"
+                            class="relative rounded-lg border-2 border-charcoal-ink w-64 md:w-80 shadow-md"
+                        />
+                    </div>
+                </div>
+
+                <p>
+                    Hi! I’m Connor. I’m the person building BonsAI, and I’m
+                    based in the United States. You can learn more about my
+                    background on <a
+                        href="https://crforsythe.github.io/"
+                        class="underline hover:text-olive-growth"
+                        >my personal website</a
+                    >.
+                </p>
+
+                <p>
+                    BonsAI started as a personal project, but it exists because
+                    I kept running into the same pattern over and over: modern
+                    AI tools ask users to make tradeoffs that many people aren’t
+                    comfortable with.
+                </p>
+
+                <p>
+                    Most cloud AI products are built around recurring revenue.
+                    That business model creates incentives I don’t love:
+                    collecting as much data as possible, keeping users locked
+                    in, and quietly trading privacy for convenience. Even when
+                    intentions are good, the pressure to grow often pushes
+                    products in directions users never asked for.
+                </p>
+
+                <p>
+                    I also worry about the environmental cost of always-on cloud
+                    infrastructure. Training and running massive models in data
+                    centers isn’t free (financially or environmentally) and
+                    those costs are usually invisible to the people using the
+                    tools.
+                </p>
+
+                <p>BonsAI is my attempt at a different approach.</p>
+
+                <p>
+                    It runs locally. It stores your data on your machine. It
+                    works offline. When it uses the internet, it does so only
+                    when you explicitly ask. There are no accounts, no
+                    analytics, and no background data collection.
+                </p>
+
+                <p>
+                    I’m not funded by advertisers, investors, or data brokers.
+                    BonsAI isn’t designed to extract value from you. Rather,
+                    it’s designed to be useful, understandable, and owned by the
+                    person using it.
+                </p>
+
+                <p>
+                    I don’t believe software needs to be complicated or
+                    intrusive to be powerful. I believe in small, carefully
+                    built tools with clear boundaries. If BonsAI ever changes
+                    direction, I believe users deserve to know.
+                </p>
+
+                <p>
+                    Best,<br />
+                    Connor
+                </p>
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-16 text-center">
+                <a
+                    href="/"
+                    class="inline-block px-6 py-3 font-mono text-sm border border-charcoal-ink rounded hover:bg-olive-growth hover:text-rice-paper transition-colors"
+                >
+                    ← Return Home
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <Footer />
+</Layout>
