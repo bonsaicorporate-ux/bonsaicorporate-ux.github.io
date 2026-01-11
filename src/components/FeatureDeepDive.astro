@@ -1,74 +1,229 @@
 ---
-import Placeholder from './ui/Placeholder.astro';
-import SearchArchitecture from './diagrams/SearchArchitecture';
+import Placeholder from "./ui/Placeholder.astro";
+import SearchArchitecture from "./diagrams/SearchArchitecture";
 
 const features = [
 	{
 		id: "knowledge-grafting",
-		title: "Knowledge Grafting",
+		title: "Use AI on sensitive documents—without uploading them.",
 		subtitle: "Feed the Soil",
-		description: "Drag and drop PDFs or text files directly into a conversation. BonsAI grafts documents to specific chat contexts, allowing you to query your private data securely. Your sensitive financial docs or draft manuscripts never leave your machine.",
-		media: { type: "video", src: "/RAG-Web.mp4", caption: "Fig 2: Local RAG. No upload bars. No cloud processing.", objectPosition: "center 60%" },
-		align: "right"
+		description:
+			"Drop in PDFs, notes, or text and ask questions safely. BonsAI keeps your content on your machine so you can analyze personal, legal, medical, or work documents with confidence. Disconnect from the internet and it still works.<br/><br/><span class='text-sm opacity-80'>(Built with local retrieval to ground answers in your files.)</span>",
+		media: {
+			type: "video",
+			src: "/RAG-Web.mp4",
+			caption: "Fig 1: No upload bars. No cloud processing.",
+			objectPosition: "center 60%",
+		},
+		align: "right",
+	},
+	{
+		id: "privacy-box", // Special item for Privacy Box insertion
+		title: "Privacy, in plain English.",
+		subtitle: "",
+		description: "",
+		media: null,
+		align: "center",
 	},
 	{
 		id: "bio-card",
 		title: "The Bio-Card",
 		subtitle: "A Living Record",
-		description: "Cloud AI collects your data to personalize your experience—for their benefit. BonsAI keeps it local.<br/><br/>The Bio-Card is where you define who you are. Your background, preferences, and context travel with every conversation—no repetitive introductions required.",
-		media: { type: "video", src: "/Bio-Card-Web.mp4", caption: "Fig 2: The Bio-Card identity layer." },
-		align: "left"
+		description:
+			"Cloud AI collects your data to personalize your experience—for their benefit. BonsAI keeps it local.<br/><br/>The Bio-Card is where you define who you are. Your background, preferences, and context travel with every conversation—no repetitive introductions required.",
+		media: {
+			type: "video",
+			src: "/Bio-Card-Web.mp4",
+			caption: "Fig 2: The Bio-Card identity layer.",
+		},
+		align: "left", // Changed from left to satisfy alternating check? Previous was right(1), left(2/box?), left(3).
+		// Let's check alternating flow.
+		// 1(Docs): Right text? Previous code: Docs=Right.
+		// 2(Box): Center/Full.
+		// 3(Bio): Left text? Previous code: Bio=Left.
+		// 4(Saplings): Right text? Previous code: Saplings=Right.
+		// 5(Search): Left text? Previous code: Search=Left.
+		// This preserves alternating flow around the box if we consider the box neutral.
 	},
 	{
 		id: "saplings",
 		title: "Saplings",
 		subtitle: "Grow Your Personas",
-		description: "Grow distinct Personas for different tasks—a 'Junior Dev' for coding, a 'Plot Architect' for writing. Each Sapling carries its own distinct personality and conversation history, letting you switch contexts without losing focus.",
-		media: { type: "video", src: "/Sapling-Web.mp4", caption: "Fig 3: The Saplings personalization engine.", objectPosition: "center bottom" },
-		align: "right"
+		description:
+			"Grow distinct Personas for different tasks—a 'Junior Dev' for coding, a 'Plot Architect' for writing. Each Sapling carries its own distinct personality and conversation history, letting you switch contexts without losing focus.",
+		media: {
+			type: "video",
+			src: "/Sapling-Web.mp4",
+			caption: "Fig 3: The Saplings personalization engine.",
+			objectPosition: "center bottom",
+		},
+		align: "right",
 	},
 	{
 		id: "privacy-search",
-		title: "Privacy Search",
+		title: "Private web search—only when you ask for it.",
 		subtitle: "Forage Responsibly",
-		description: "Sometimes the answer isn't on your hard drive. BonsAI includes a private, scraper-based search tool. It fetches live data from the web without using tracked APIs or exposing your identity to Big Tech. You open the airlock, fetch the data, and seal it shut.",
-		media: { type: "video", src: "/Search-Web.mp4", caption: "Fig 4: Anonymous search fetching live web data.", objectPosition: "center bottom" },
-		align: "left"
-	}
+		description:
+			"When you click Search, BonsAI looks up sources on the web and summarizes what it finds. Search is always optional, clearly labeled, and never runs in the background.",
+		media: {
+			type: "video",
+			src: "/Search-Web.mp4",
+			caption: "Fig 4: Anonymous search fetching live web data.",
+			objectPosition: "center bottom",
+		},
+		align: "left",
+	},
 ];
 ---
 
 <section class="py-24 px-4 space-y-32">
-    {features.map((feature, index) => (
-        <div id={feature.id} class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-            {/* Text Side */}
-            <div class:list={["space-y-6", feature.align === 'right' ? 'md:order-2' : 'md:order-1']}>
-                
-                <h3 class="font-heading font-bold text-4xl text-charcoal-ink">
-                    {feature.title}
-                </h3>
-                <h4 class="font-heading font-medium text-2xl text-terracotta italic mb-4">
-                    {feature.subtitle}
-                </h4>
-                
-                <div class="prose prose-lg text-charcoal-ink/90 font-body leading-relaxed" set:html={feature.description}></div>
-            </div>
+	{
+		features.map((feature, index) => {
+			if (feature.id === "privacy-box") {
+				return (
+					<div class="max-w-4xl mx-auto border-2 border-charcoal-ink shadow-base bg-white p-8 md:p-12 relative overflow-hidden">
+						<div class="absolute -top-12 -right-12 w-32 h-32 bg-olive-growth/5 rounded-full blur-3xl z-0" />
+						<div class="relative z-10">
+							<h3 class="font-heading font-bold text-3xl md:text-4xl text-charcoal-ink text-center mb-4">
+								{feature.title}
+							</h3>
+							<p class="text-center font-body text-charcoal-ink/80 mb-10">
+								Here’s exactly what BonsAI does—and just as
+								importantly, what it never does.
+							</p>
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+								{/* Left List */}
+								<div class="space-y-4">
+									<h4 class="font-bold text-terracotta text-lg border-b-2 border-terracotta/20 pb-2">
+										What BonsAI never does
+									</h4>
+									<ul class="space-y-2 font-mono text-sm leading-relaxed text-charcoal-ink/80">
+										<li class="flex items-center gap-2">
+											<span class="text-terracotta font-bold">
+												×
+											</span>{" "}
+											Accounts or logins
+										</li>
+										<li class="flex items-center gap-2">
+											<span class="text-terracotta font-bold">
+												×
+											</span>{" "}
+											Tracking of how you use the app
+										</li>
+										<li class="flex items-center gap-2">
+											<span class="text-terracotta font-bold">
+												×
+											</span>{" "}
+											Analytics or usage metrics
+										</li>
+										<li class="flex items-center gap-2">
+											<span class="text-terracotta font-bold">
+												×
+											</span>{" "}
+											Automatic error reports
+										</li>
+										<li class="flex items-center gap-2">
+											<span class="text-terracotta font-bold">
+												×
+											</span>{" "}
+											Cloud sync
+										</li>
+									</ul>
+								</div>
 
-            {/* Media Side */}
-            <div class:list={["w-full", feature.align === 'right' ? 'md:order-1' : 'md:order-2']}>
-                {feature.media && (
-                    <Placeholder 
-                        type={feature.media.type as any} 
-                        src={(feature.media as any).src}
-                        objectPosition={(feature.media as any).objectPosition}
-                        caption={feature.media.caption} 
-                        class="w-full transform transition-all duration-700 hover:scale-[1.01]"
-                    />
-                )}
-                {!feature.media && (
-                    <SearchArchitecture client:visible />
-                )}
-            </div>
-        </div>
-    ))}
+								{/* Right List */}
+								<div class="space-y-4">
+									<h4 class="font-bold text-olive-growth text-lg border-b-2 border-olive-growth/20 pb-2">
+										What BonsAI always does
+									</h4>
+									<ul class="space-y-2 font-mono text-sm leading-relaxed text-charcoal-ink">
+										<li class="flex items-start gap-2">
+											<span class="text-olive-growth font-bold mt-0.5">
+												✓
+											</span>{" "}
+											Uses the internet only when you
+											click Search
+										</li>
+										<li class="flex items-start gap-2">
+											<span class="text-olive-growth font-bold mt-0.5">
+												✓
+											</span>{" "}
+											Stores chats and settings locally
+										</li>
+										<li class="flex items-start gap-2">
+											<span class="text-olive-growth font-bold mt-0.5">
+												✓
+											</span>{" "}
+											Runs fully offline by default
+										</li>
+										<li class="flex items-start gap-2">
+											<span class="text-olive-growth font-bold mt-0.5">
+												✓
+											</span>{" "}
+											Lets you export or delete your data
+											anytime
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				);
+			}
+
+			return (
+				<div
+					id={feature.id}
+					class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center"
+				>
+					{/* Text Side */}
+					<div
+						class:list={[
+							"space-y-6",
+							feature.align === "right"
+								? "md:order-2"
+								: "md:order-1",
+						]}
+					>
+						<h3 class="font-heading font-bold text-4xl text-charcoal-ink">
+							{feature.title}
+						</h3>
+						<h4 class="font-heading font-medium text-2xl text-terracotta italic mb-4">
+							{feature.subtitle}
+						</h4>
+
+						<div
+							class="prose prose-lg text-charcoal-ink/90 font-body leading-relaxed"
+							set:html={feature.description}
+						/>
+					</div>
+
+					{/* Media Side */}
+					<div
+						class:list={[
+							"w-full",
+							feature.align === "right"
+								? "md:order-1"
+								: "md:order-2",
+						]}
+					>
+						{feature.media && (
+							<Placeholder
+								type={feature.media.type as any}
+								src={(feature.media as any).src}
+								objectPosition={
+									(feature.media as any).objectPosition
+								}
+								caption={feature.media.caption}
+								class="w-full transform transition-all duration-700 hover:scale-[1.01]"
+							/>
+						)}
+						{!feature.media && (
+							<SearchArchitecture client:visible />
+						)}
+					</div>
+				</div>
+			);
+		})
+	}
 </section>

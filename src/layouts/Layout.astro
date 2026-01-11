@@ -6,7 +6,10 @@ interface Props {
 	description?: string;
 }
 
-const { title, description = "The privacy-first reasoning engine designed for the hardware you already own. Your data. Your desk." } = Astro.props;
+const {
+	title,
+	description = "The privacy-first reasoning engine designed for the hardware you already own. Your data. Your desk.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -17,18 +20,37 @@ const { title, description = "The privacy-first reasoning engine designed for th
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		
+
 		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
-		
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Merriweather:wght@700;900&display=swap"
+			rel="stylesheet"
+		/>
+
 		<title>{title}</title>
 	</head>
-	<body class="bg-rice-paper text-charcoal-ink font-body antialiased relative min-h-screen">
+	<body
+		class="bg-rice-paper text-charcoal-ink font-body antialiased relative min-h-screen"
+	>
 		<!-- Background Noise Texture -->
-		<div class="fixed inset-0 pointer-events-none z-50 opacity-40 bg-noise mix-blend-multiply"></div>
-		
+		<div
+			class="fixed inset-0 pointer-events-none z-50 opacity-40 bg-noise mix-blend-multiply"
+		>
+		</div>
+
+		<nav
+			class="absolute top-0 left-0 w-full py-6 px-8 flex justify-between items-center z-50"
+		>
+			<a
+				href="/"
+				class="font-heading font-black text-2xl tracking-tight text-charcoal-ink"
+			>
+				BonsAI
+			</a>
+		</nav>
+
 		<main class="relative z-10 flex flex-col min-h-screen">
 			<slot />
 		</main>
